@@ -1,0 +1,59 @@
+POST http://localhost:5162/recipes
+Content-Type: application/json
+
+{
+    "Title": "Test1",
+    "Ingredients": [
+        {
+            "Name": "TestA",
+            "Quantity": 1,
+            "MeasureUnit": "Test1"
+        },
+        {
+            "Name": "TestB",
+            "Quantity": 2,
+            "MeasureUnit": "Test2"
+        }
+    ],
+    "Description": "Test1",
+    "ImageLink": "test.png"
+}
+
+###
+
+GET http://localhost:5162/recipes
+
+### 
+
+DELETE http://localhost:5162/recipes/2
+
+###
+
+GET http://localhost:5162/recipes/filter-by-title?title=A
+
+###
+
+GET http://localhost:5162/recipes/filter-by-ingredient?ingredient=A
+
+###
+
+PUT http://localhost:5162/recipes/1
+Content-Type: application/json
+
+{
+  "title": "Test123",
+  "ingredients": [
+    {
+      "name": "TestABC",
+      "measureUnit": "Test1",
+      "quantity": 1
+    },
+    {
+      "name": "TestBCD",
+      "measureUnit": "Test2",
+      "quantity": 2
+    }
+  ],
+  "description": "Test123",
+  "imageLink": "test123.png"
+}
